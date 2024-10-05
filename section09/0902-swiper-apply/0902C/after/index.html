@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <section></section>
+
+      <div class="card">
+        <div class="card__inner">
+          <ul class="card__list">
+            <li class="card__list-item current" data-slide="1">Card1</li>
+            <li class="card__list-item" data-slide="2">Card2</li>
+            <li class="card__list-item" data-slide="3">Card3</li>
+            <li class="card__list-item" data-slide="4">Card4</li>
+          </ul>
+          <div class="card__swiper-container">
+            <div class="swiper card__swiper">
+              <div class="swiper-wrapper card__swiper-wrapper">
+                <div class="swiper-slide card__swiper-slide">
+                  <p>Card1</p>
+                </div>
+                <div class="swiper-slide card__swiper-slide">
+                  <p>Card2</p>
+                </div>
+                <div class="swiper-slide card__swiper-slide">
+                  <p>Card3</p>
+                </div>
+                <div class="swiper-slide card__swiper-slide">
+                  <p>Card4</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="20" transform="rotate(-180 20 20)" fill="black" />
+                <path d="M7.29289 19.2929C6.90237 19.6834 6.90237 20.3166 7.29289 20.7071L13.6569 27.0711C14.0474 27.4616 14.6805 27.4616 15.0711 27.0711C15.4616 26.6805 15.4616 26.0474 15.0711 25.6569L9.41421 20L15.0711 14.3431C15.4616 13.9526 15.4616 13.3195 15.0711 12.9289C14.6805 12.5384 14.0474 12.5384 13.6569 12.9289L7.29289 19.2929ZM32 19L8 19V21L32 21V19Z" fill="white" />
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="20" fill="black" />
+                <path d="M32.7071 20.7071C33.0976 20.3166 33.0976 19.6834 32.7071 19.2929L26.3431 12.9289C25.9526 12.5384 25.3195 12.5384 24.9289 12.9289C24.5384 13.3195 24.5384 13.9526 24.9289 14.3431L30.5858 20L24.9289 25.6569C24.5384 26.0474 24.5384 26.6805 24.9289 27.0711C25.3195 27.4616 25.9526 27.4616 26.3431 27.0711L32.7071 20.7071ZM8 21H32V19H8V21Z" fill="white" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

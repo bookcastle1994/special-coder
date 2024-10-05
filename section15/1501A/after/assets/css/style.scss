@@ -1,0 +1,67 @@
+//=====================================
+//  変数
+//=====================================
+$pc_camp: 1240; //pcカンプの幅
+$sp_camp: 375; //spカンプの幅
+$breakpoint: 768;
+$pc-inner-sum: 1080;
+
+//=====================================
+//  関数
+//=====================================
+@function rm($arg) {
+  @return calc($arg / 16 * 1rem);
+}
+@function px($arg) {
+  @return calc($arg * 1px);
+}
+
+//=====================================
+//  ブレイクポイント
+//=====================================
+$breakpoints: (
+  //キー : 値
+  'sp': 'screen and (max-width: #{$breakpoint - 1px})',
+  'pc': '(min-width: #{$breakpoint * 1px})'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// =================================
+//  フォント情報の一括入力
+// =================================
+
+@mixin font($size: null, $weight: null, $height: null, $spacing: null) {
+  @if $size {
+    font-size: calc($size / 16 * 1rem);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $spacing {
+    letter-spacing: calc($spacing / $size * 1em);
+  }
+}
+
+//=====================================
+//  実際のコード
+//=====================================
+html {
+  @media screen and (max-width: #{px($pc-inner-sum) - 1px}) and (min-width: #{px($breakpoint)}) {
+    font-size: calc(16 / #{$pc-inner-sum} * 100vw);
+  }
+  @media screen and (max-width: #{px($breakpoint) - 1px}) {
+    font-size: calc(16 / #{$sp-camp} * 100vw);
+  }
+}
+
+.test {
+  @include font(30, 400, 45, 0.6);
+}

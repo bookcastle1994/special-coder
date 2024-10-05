@@ -1,0 +1,101 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.card {
+  padding-block: 100px;
+  overflow: hidden;
+}
+.card__inner {
+  width: min(calc(840px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  position: relative;
+}
+.card__swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: auto;
+  aspect-ratio: 1;
+  background: #d9d9d9;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.card__swiper-container,
+.card__swiper,
+.card__swiper-wrapper,
+.card__swiper-slide {
+  position: relative;
+}
+.card__swiper-container {
+}
+.card__swiper {
+  overflow: visible;
+}
+.card__swiper-wrapper {
+}
+.card__swiper-slide {
+}
+
+//位置のreset
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+// =============================
+// ナビゲーションボタン
+// =============================
+//デフォルトのボタンを初期化
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: ''; //デフォルトのものを初期化
+}
+//各ボタンのカスタマイズ
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: calc(100% + 20px);
+  width: 40px;
+  height: 40px;
+}
+.swiper-button-prev {
+  right: 54px;
+}
+.swiper-button-next {
+  right: 0;
+}
+
+// =============================
+// ページネーション (bullets)
+// =============================
+//位置の設定 (枠組み)
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: calc(100% + 30px);
+  left: 0;
+  text-align: left;
+}
+//それぞれのページネーション
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+  opacity: 1;
+  width: 40px;
+  height: 5px;
+  border-radius: 0;
+  background: #d9d9d9;
+  margin-inline: calc(11px / 2);
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+//activeな部分
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+  background: #000;
+}

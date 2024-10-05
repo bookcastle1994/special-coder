@@ -1,0 +1,84 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.card {
+    padding-block: 100px;
+}
+.card__item-title,
+.card__item-text,
+.card__item-categories,
+.card__item-time {
+    padding-inline: 16px;
+}
+.card__item-title {
+    padding-top: 4px;
+}
+.card__item-time {
+    padding-bottom: 16px;
+}
+
+.card__item-title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 150% */
+}
+.card__item-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+.card__item-category {
+    width: fit-content;
+    height: fit-content;
+    padding: 1px 12px;
+    border: 1px solid #AFAFAF;
+    color: #AFAFAF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    border-radius: 100vmax;
+}
+.card__item-time {
+    color: #AFAFAF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.card__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+}
+.card__item {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    gap: 12px;
+    margin-bottom: 58px;
+}
+.card__item-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; //最大の行数を入れる
+    align-self: center;
+}
+.card__item-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; //最大の行数を入れる
+}
+.card__item-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}

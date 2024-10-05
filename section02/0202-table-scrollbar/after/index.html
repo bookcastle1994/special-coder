@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After</title>
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/common/css/reset.css">
+    <link rel="stylesheet" href="/common/css/base.css">
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- scroll-hint CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css">
+    <script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
+</head>
+<body>
+
+    <header></header>
+
+    <main>
+
+        <div class="table-wrap js-scrollable">
+            <table class="table">
+                <tr class="table-row">
+                    <th class="table-head table-scroll-fixed01"></th>
+                    <th class="table-head table-scroll-fixed02">当社</th>
+                    <th class="table-head">A社</th>
+                    <th class="table-head">B社</th>
+                    <th class="table-head">C社</th>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-side-head table-scroll-fixed01">サポート期間</th>
+                    <td class="table-data --main table-scroll-fixed02">購入から2年間</td>
+                    <td class="table-data">購入から半年</td>
+                    <td class="table-data">なし</td>
+                    <td class="table-data">購入から1年間</td>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-side-head table-scroll-fixed01">チャット質問対応</th>
+                    <td class="table-data --main table-scroll-fixed02">◯</td>
+                    <td class="table-data">&times;</td>
+                    <td class="table-data">&times;</td>
+                    <td class="table-data">&times;</td>
+                </tr>
+                <tr class="table-row">
+                    <th class="table-side-head table-scroll-fixed01">金額</th>
+                    <td class="table-data --main table-scroll-fixed02">¥99,800</td>
+                    <td class="table-data">¥149,800</td>
+                    <td class="table-data">¥129,800</td>
+                    <td class="table-data">¥299,800</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+    
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

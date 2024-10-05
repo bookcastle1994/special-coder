@@ -1,0 +1,120 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+button {
+  color: inherit;
+  background: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.news {
+  background: #d6eeff;
+  padding-block: 116px 81px;
+}
+.news__inner {
+  width: min(calc(880px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.news__tablist {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.news__tab {
+  text-align: left;
+  color: #8e8e8e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 19px;
+
+  &[aria-selected='true'] {
+    color: #000;
+    position: relative;
+    pointer-events: none;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      left: 0;
+      width: 8px;
+      height: auto;
+      aspect-ratio: 1;
+      background: #000;
+      border-radius: 50%;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.news__contents {
+  width: 682px;
+}
+.news__content-wrap {
+  border-top: 1px solid #000;
+
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  translate: 0 20px;
+  transition: opacity 1s ease, translate 0.5s ease;
+  &.js-show {
+    opacity: 1;
+    visibility: visible;
+    height: fit-content;
+    translate: 0;
+  }
+}
+.news__content {
+  padding: 17px 9px;
+  border-bottom: 1px solid #000;
+}
+.news__content-meta {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 15px;
+}
+.news__content-time {
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+.news__content-category {
+  padding: 3px 10px;
+  min-width: 88px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(90deg, #000f95 0%, #6f4df6 100%);
+}
+.news__content-text {
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

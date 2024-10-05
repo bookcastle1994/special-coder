@@ -1,0 +1,28 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.card {
+  padding-block: 100px;
+  overflow: hidden;
+}
+.card__swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  width: 240px;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  background: #d9d9d9;
+}
+
+.card__swiper-container + .card__swiper-container {
+  margin-top: 60px;
+}
+
+.card__swiper-wrapper {
+  transition-timing-function: linear; //ポイント
+}

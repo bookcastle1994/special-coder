@@ -1,0 +1,75 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.card {
+  padding-block: 100px;
+  overflow: hidden;
+}
+.card__inner {
+  width: min(calc(840px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  position: relative;
+}
+.card__swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: auto;
+  aspect-ratio: 1;
+  background: #d9d9d9;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.card__swiper-container,
+.card__swiper,
+.card__swiper-wrapper,
+.card__swiper-slide {
+  position: relative;
+}
+.card__swiper-container {
+}
+.card__swiper {
+  overflow: visible;
+}
+.card__swiper-wrapper {
+}
+.card__swiper-slide {
+}
+
+//位置のreset
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+
+// =============================
+// ページネーション (progressbar)
+// =============================
+//位置の設定と外枠
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  top: calc(100% + 34px);
+  left: 50%;
+  translate: -50%;
+  width: 340px;
+  height: 7px;
+  background: #d9d9d9;
+}
+//activeな部分
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #000;
+}

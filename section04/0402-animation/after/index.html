@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- split type CDN-->
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <section class="fv">
+        <picture>
+          <img class="fv__bg" src="/common/img/section04/fv-bg.jpg" alt="山の上でガッツポーズしている人のイラスト" width="1240" height="630" />
+        </picture>
+        <div class="inner --normal">
+          <h1 class="fv__title">目標達成するために</h1>
+        </div>
+      </section>
+
+      <section class="goal">
+        <div class="inner --normal">
+          <hgroup class="goal__title">
+            <p class="goal__title--en animated__colorBox">The Importance of Goal Setting</p>
+            <h2 class="goal__title--ja animated__colorBox">目標設定の重要性</h2>
+          </hgroup>
+          <h3 class="goal__subtitle goal-important__title animated__slideUp">目標設定の重要性</h3>
+          <div class="goal-important__container">
+            <div class="goal-important__item">
+              <div class="goal-important__item-img-wrap animated__scaleImg">
+                <picture>
+                  <img class="goal-important__item-img" src="/common/img/section04/smart.jpg" alt="smart goals" width="499" height="285" loading="lazy" />
+                </picture>
+              </div>
+              <div class="goal-important__item-text-wrap">
+                <h4 class="goal-important__item-title animated__clipView animated__clipView">SMART目標</h4>
+                <p class="goal-important__item-text animated__fadeIn">
+                  SMART目標は、具体的（Specific）、測定可能（Measurable）、達成可能（Achievable）、関連性（Relevant）、期限付き（Time-bound）の5つの要素を満たすものです。<br />
+                  この方法を用いることで、現実的かつ達成可能な目標を設定することができます。
+                </p>
+              </div>
+            </div>
+            <div class="goal-important__item">
+              <div class="goal-important__item-img-wrap animated__scaleImg">
+                <picture>
+                  <img class="goal-important__item-img" src="/common/img/section04/goal-list.jpg" alt="goal list" width="499" height="285" loading="lazy" />
+                </picture>
+              </div>
+              <div class="goal-important__item-text-wrap">
+                <h4 class="goal-important__item-title animated__clipView">自己動機付け</h4>
+                <p class="goal-important__item-text animated__fadeIn">目標を達成するためには、強い自己動機付けが必要です。自分自身の目標がどれほど重要かを理解し、毎日の習慣や行動に組み込むことで、目標達成に向けた意欲を維持することができます。</p>
+              </div>
+            </div>
+          </div>
+          <h3 class="goal__subtitle goal-plan__title animated__slideUp">計画と実行</h3>
+          <div class="goal-plan__container">
+            <div class="goal-plan__item">
+              <div class="goal-plan__item-img-wrap animated__clipView">
+                <picture>
+                  <img class="goal-plan__item-img" src="/common/img/section04/reverse-thinking.jpg" alt="reverse thinking" width="346" height="346" loading="lazy" />
+                </picture>
+              </div>
+              <h4 class="goal-plan__item-title animated__underText"><span>逆算思考</span></h4>
+              <p class="goal-plan__item-text animated__fadeIn">目標達成のためには、最終ゴールから逆算して計画を立てる逆算思考が効果的です。これにより、各ステップが明確になり、効率的に進行することができます。</p>
+            </div>
+            <div class="goal-plan__item">
+              <div class="goal-plan__item-img-wrap animated__clipView">
+                <picture>
+                  <img class="goal-plan__item-img" src="/common/img/section04/check-in.jpg" alt="check in" width="346" height="346" loading="lazy" />
+                </picture>
+              </div>
+              <h4 class="goal-plan__item-title animated__underText">
+                <span>定期的なチェックイン</span>
+              </h4>
+              <p class="goal-plan__item-text animated__fadeIn">定期的に目標の進捗をチェックし、必要に応じて計画を修正することが重要です。進捗を可視化することで、目標達成に向けたモチベーションを維持しやすくなります。</p>
+            </div>
+            <div class="goal-plan__item">
+              <div class="goal-plan__item-img-wrap animated__clipView">
+                <picture>
+                  <img class="goal-plan__item-img" src="/common/img/section04/resource.jpg" alt="resource" width="346" height="346" loading="lazy" />
+                </picture>
+              </div>
+              <h4 class="goal-plan__item-title animated__underText">
+                <span>効率的なリソース配分</span>
+              </h4>
+              <p class="goal-plan__item-text animated__fadeIn">リソースを効率的に配分することは、目標達成のために不可欠です。人材、時間、予算などのリソースを最適に活用し、各タスクに適切なリソースを割り当てることで、全体の効率を高めることができます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer style="height: 100vh"></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

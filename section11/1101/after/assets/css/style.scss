@@ -1,0 +1,116 @@
+//=====================================
+//    変数
+//=====================================
+$pc_camp: 1240; //pcカンプの幅
+$sp_camp: 375; //spカンプの幅
+$breakpoint: 768;
+$pc-inner-sum: 1080;
+
+//=====================================
+//    関数
+//=====================================
+@function rm($arg) {
+	@return calc($arg / 16 * 1rem);
+}
+@function px($arg) {
+	@return calc($arg * 1px);
+}
+
+//=====================================
+//    ブレイクポイント
+//=====================================
+$breakpoints: (
+    //キー : 値
+    'sp': "screen and (max-width: #{$breakpoint - 1px})",
+    'pc': "(min-width: #{$breakpoint * 1px})", 
+) !default;
+
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+
+//=====================================
+//    実際のコード
+//=====================================
+html {
+    @media screen and (max-width: #{px($pc-inner-sum) - 1px}) and (min-width: #{px($breakpoint)}) {
+		font-size: calc(16 / #{$pc-inner-sum} * 100vw); 
+	}
+    @media screen and (max-width: #{px($breakpoint) - 1px}) {
+        font-size: calc(16 / #{$sp-camp} * 100vw);
+    }
+}
+
+.test {
+    padding-block: rm(85) rm(101);
+    @include mq(sp) {
+        padding-bottom: rm(42) rm(70);
+    }  
+}
+.test__inner {
+    width: min(calc(rm(1040) + rm(20) * 2), 100%);
+    padding-inline: rm(20);
+    margin-inline: auto;;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rm(51);
+
+    @include mq(sp) {
+        display: grid;
+        grid-template-areas:
+        "title"
+        "img"
+        "text";
+        grid-template-columns: 1fr;
+    }
+}
+.test__img {
+    width: min(rm(500), 100%);
+    height: auto;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include mq(sp) {
+        grid-area: img;
+        width: calc(100% + rm(40));
+        margin-left: rm(-20);
+        margin-bottom: rm(32);
+    }
+}
+.test__text-wrap {
+    flex: 1;
+    @include mq(sp) {
+        display: contents;
+    }
+}
+.test__title {
+    font-size: rm(32);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: rm(40);
+
+    @include mq(sp) {
+        grid-area: title;
+        font-size: rm(24);
+        line-height: 1.33;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: rm(24);
+    }
+}
+.test__text {
+    font-size: rm(16);
+    line-height: 1.5;
+
+    @include mq(sp) {
+        grid-area: text;
+    }
+}

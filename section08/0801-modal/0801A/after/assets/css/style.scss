@@ -1,0 +1,78 @@
+//初期設定==================
+button {
+  background: none;
+}
+:where(dialog) {
+  width: unset;
+  max-width: unset;
+  height: unset;
+  max-height: unset;
+  padding: unset;
+  color: unset;
+  background-color: unset;
+  border: unset;
+  overflow: unset;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+.wrapper:has(dialog[open]) {
+  overflow-y: auto;
+  scrollbar-gutter: stable; //スクロールバーのスペースを常に確保する
+}
+//ボタンのスタイル ============
+.modal__open-btn {
+  padding: 4px 20px;
+  border: 1px solid #000;
+}
+//モーダルのスタイル ============
+dialog {
+  &::backdrop {
+    opacity: 0;
+    transition: background 0.3s ease-in-out;
+  }
+  &.js-show {
+    &.modal__content {
+      opacity: 1;
+    }
+    &::backdrop {
+      opacity: 1;
+      //背景画像
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+    }
+  }
+}
+.modal__content {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  //モーダル枠組みのスタイル
+  width: min(600px, 95%);
+  max-height: 80vh;
+  background: #fff;
+}
+.modal__inner {
+  overflow-y: scroll;
+  height: 100%;
+  position: relative;
+}
+.modal__body {
+  height: fit-content;
+  //modal内のスタイル
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+//閉じるボタンのスタイル =========
+.modal__close-btn {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+}

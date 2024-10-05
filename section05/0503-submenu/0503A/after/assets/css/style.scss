@@ -1,0 +1,126 @@
+// ================================
+//  初期設定 CSS
+// ================================
+main {
+  height: 300vh;
+  background: rgb(0, 0, 0);
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding-inline: 40px;
+  background: #001a75;
+}
+.header__inner {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  padding-block: 17px;
+}
+.header__logo {
+  width: 150px;
+  height: auto;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: 60px;
+}
+.header__list {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    padding-inline: 8px;
+  }
+}
+.header__btn {
+  transition: all 0.3s ease;
+  padding: 8px 26px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 100vmax;
+  color: #001a75;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      background: transparent;
+    }
+  }
+}
+
+//sub menu
+.header__item--menu {
+  position: relative;
+}
+.header__sublist-wrap {
+  position: absolute;
+  top: calc(100% - 5px);
+  left: 50%;
+  translate: -50%;
+  padding-top: 15px;
+  display: none;
+}
+.header__sublist {
+  position: relative;
+  width: fit-content;
+  height: auto;
+  background: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  li a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 11px solid #ffffff;
+    border-top: 0;
+  }
+}

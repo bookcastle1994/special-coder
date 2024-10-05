@@ -1,0 +1,146 @@
+// ================================
+//  初期設定 CSS
+// ================================
+main {
+  height: 300vh;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+button {
+  color: #000;
+  background: transparent;
+}
+
+// ================================
+//  見栄えを作るCSS
+// ================================
+section {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  &#about {
+    background: yellow;
+  }
+  &#service {
+    background: red;
+  }
+  &#feature {
+    background: green;
+  }
+  &#company {
+    background: peru;
+  }
+  &#contact {
+    background: purple;
+  }
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #001a75;
+}
+.header__inner {
+  padding: 13.5px 20px;
+}
+.header__nav {
+  //spの場合非表示
+  display: none;
+}
+
+//アイコン
+.drawer__icon {
+  position: fixed;
+  z-index: 102;
+  top: 12px;
+  right: 20px;
+  width: 24px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.drawer__icon--bar {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+//メニューが開いている時
+.drawer__icon.js-show {
+  .drawer__icon--bar:nth-of-type(1) {
+    rotate: 45deg;
+    translate: 0 7.5px;
+  }
+  .drawer__icon--bar:nth-of-type(2) {
+    display: none;
+  }
+  .drawer__icon--bar:nth-of-type(3) {
+    rotate: -45deg;
+    translate: 0 -7.5px;
+  }
+}
+
+//ドロワーメニュー
+.drawer {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  right: 0;
+  width: 278px;
+  height: 100vh;
+  height: 100svh;
+  background: #001a75;
+  overflow-y: scroll;
+  translate: 101%;
+  transition: translate 0.5s ease;
+  &.js-show {
+    translate: 0;
+  }
+}
+.drawer__body {
+  width: 100%;
+  height: fit-content;
+  padding-block: 88px 40px;
+  padding-left: 34px;
+}
+.drawer__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  margin-bottom: 40px;
+  width: fit-content;
+  li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.drawer__btn {
+  display: inline-block;
+  padding: 6px 30px;
+  background: #fff;
+  border-radius: 100vmax;
+  color: #001a75;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,155 @@
+// ================================
+//  本題のCSS
+// ================================
+
+.member {
+  padding-block: 200px;
+}
+.member__inner {
+  width: min(calc(1040px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+.member__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 70px;
+}
+.member__item {
+  position: relative;
+  picture {
+    display: inline-block;
+  }
+}
+.member__item-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border: 2px solid #000;
+}
+.modal__open-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(142deg, #1ae3ff 10.15%, #115df1 94.05%);
+  span {
+    display: inline-block;
+    font-size: 50px;
+    line-height: 1;
+    color: #fff;
+    margin-top: -8px;
+  }
+}
+
+//初期設定==================
+button {
+  background: none;
+}
+:where(dialog) {
+  width: unset;
+  max-width: unset;
+  // height: unset;
+  // max-height: unset;
+  padding: unset;
+  color: unset;
+  background-color: unset;
+  border: unset;
+  overflow: unset;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+//モーダルのスタイル ============
+dialog {
+  &::backdrop {
+    opacity: 0;
+    transition: background 0.3s ease-in-out;
+  }
+  &.js-show {
+    &.modal__content {
+      opacity: 1;
+    }
+    &::backdrop {
+      opacity: 1;
+      //背景画像
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+    }
+  }
+}
+.modal__content {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  //モーダル枠組みのスタイル
+  width: min(860px, 95%);
+  max-height: 80vh;
+  background: #d0f8f8;
+}
+.modal__inner {
+  overflow-y: scroll;
+  height: inherit;
+  max-height: inherit;
+  position: relative;
+}
+.modal__body {
+  height: fit-content;
+  padding: 50px 40px 63px;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 50px;
+}
+//コピペしたもの =========
+.modal__text {
+  width: 382px;
+  h3 {
+    font-size: 32px;
+    line-height: 48px; /* 150% */
+    margin-bottom: 12px;
+  }
+}
+.modal__text-career {
+  font-size: 12px;
+  line-height: 18px; /* 150% */
+  margin-bottom: 22px;
+}
+.modal__text-wrap {
+  margin-bottom: 20px;
+  .text {
+    font-size: 12px;
+    line-height: 18px; /* 150% */
+  }
+  .text + .text {
+    margin-top: 12px;
+  }
+}
+.modal__text-history {
+  .head {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px; /* 112.5% */
+    margin-bottom: 12px;
+  }
+  .text {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1em;
+    font-size: 12px;
+    line-height: 18px; /* 150% */
+  }
+}
+//===========
+
+//閉じるボタンのスタイル =========
+.modal__close-btn {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+}

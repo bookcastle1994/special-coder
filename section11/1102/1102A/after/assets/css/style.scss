@@ -1,0 +1,115 @@
+//=====================================
+//    変数
+//=====================================
+$sp_camp: 375; //spカンプの幅
+$breakpoint: 550;
+
+//=====================================
+//    関数
+//=====================================
+@function rm($arg) {
+	@return calc($arg / 16 * 1rem);
+}
+@function px($arg) {
+	@return calc($arg * 1px);
+}
+
+//=====================================
+//    ブレイクポイント
+//=====================================
+$breakpoints: (
+    //キー : 値
+    'sp': "screen and (max-width: #{$breakpoint - 1px})",
+    'pc': "(min-width: #{$breakpoint * 1px})", 
+) !default;
+
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+
+//=====================================
+//    実際のコード
+//=====================================
+html {
+    font-size: calc(16 / #{$sp-camp} * 550px);
+
+    @media screen and (max-width: #{px($breakpoint) - 1px}) {
+        font-size: calc(16 / #{$sp-camp} * 100vw);
+    }
+}
+
+.fv {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 375 / 364;
+    background: #0047FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        color: #FFF;
+        font-size: rm(28);
+        font-weight: 700;
+        line-height: rm(32); /* 114.286% */
+    }
+}
+
+.section {
+    padding-top: rm(50);
+}
+
+.section__inner {
+    padding-inline: rm(20);
+}
+
+.section__title {
+    color: #000;
+    font-size: rm(28);
+    font-weight: 700;
+    line-height: 1.14;
+    margin-bottom: rm(30);
+}
+
+.section__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 335 / 214;
+    margin-bottom: rm(24);
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__text {
+    font-size: rm(14);
+    line-height: 1.5;
+}
+
+
+.bg {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.main__container {
+    position: relative;
+    z-index: 1;
+    width: min(550px, 100%);
+    margin-inline: auto;
+    background: #DBEBFF;
+}

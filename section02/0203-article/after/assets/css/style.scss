@@ -1,0 +1,350 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+
+main {
+    padding-block: 100px;
+}
+
+footer {
+    background: #000;
+    height: 100vh;
+}
+
+.article__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 40px;
+}
+
+.article__sidebar {
+    position: sticky;
+    top: 40px;
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.article__contents {
+    // width: min(900px, 100%);
+    // margin-inline: auto;
+    flex: 1;
+
+   //  直接指定できるもの
+   //========================
+    .time {
+        color: #0500E3;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+    .title {
+        color: #000;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+    .icatch {
+        width: 100%;
+        //高さは指定しない(挿入した画像によって表示が崩れる可能性があるため)
+        height: auto;
+        margin-bottom: 30px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    //  各タグに当てる
+    //========================
+    h2 {
+        color: #000;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        padding: 17px 19px;
+        background: rgba(5, 0, 249, 0.07);
+    }
+    h3 {
+        color: #0500E3;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        padding-block: 7px;
+        padding-left: 24px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #0500E3;
+        }
+    }
+    h4 {
+
+    }
+    p {
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px;
+    }
+    a {
+        color: #000;
+        font-weight: 700;
+        transition: opacity 0.3s ease;
+        @media(any-hover: hover) {
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+    .image {
+        //WordPressだと.wp-block-image になります。
+        width: 100%;
+        height: auto;
+    }
+    ul, ol {
+        padding-left: 40px;
+    }
+    li {
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px;
+    }
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    table tbody {
+        display: block;
+        margin-inline: auto;
+        max-width: 800px;
+    }
+    table tr {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #0500E3;
+        &:last-of-type {
+            border-bottom: 1px solid #0500E3;
+        }
+    }
+    table th {
+        flex: 1;
+        padding-block: 14px;
+        background: rgba(5, 0, 249, 0.07);
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+    }
+    table td {
+        flex: 1;
+        align-self: center;
+        padding-block: 16px;
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.article__contents {
+    //ハイライト
+    b, strong {
+        text-decoration: underline; // 下線
+        text-decoration-thickness: 0.5em; // 線の太さ
+        text-decoration-color: rgb(255, 230, 0); // 線の色
+        text-underline-offset: -0.2em; // 線の位置。テキストに重なるようにやや上部にする
+        text-decoration-skip-ink: none; // 下線と文字列が重なる部分でも下線が省略されない（線が途切れない）
+    }
+
+    //リストタイプのカスタマイズ
+
+    ol {
+        //カウンタの値をリセット
+        counter-reset: li;
+        li {
+            list-style: none;
+            position: relative;
+            &::before {
+                //カウンタの設定
+                counter-increment: li;
+                content: counter(li)'.';
+                position: absolute;
+                //スタイル
+                top: 0;
+                left: -1.5em;
+                color:#0500E3;
+                font-weight: 700;
+            }
+        }
+    }
+
+    ul {
+        li {
+            list-style: none;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: .5em;
+                left: -1.5em;
+                width: 20px;
+                height: auto;
+                aspect-ratio: 1;
+                background: url(../img/check-icon.png) no-repeat center center / cover;
+            }
+        }
+    }
+
+    //h4タグ (2行に跨るCSS)
+    h4 {
+        span {
+            color: #fff;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 42px;
+            background: #0500E3;
+            padding: 4px 20px;
+            box-decoration-break: clone;
+        }
+    }
+
+    //余白(単体)
+    h2 {
+        margin-bottom: 40px;
+    }
+    h3, h4 {
+        margin-bottom: 20px;
+    }
+    figure {
+        margin-block: 40px;
+    }
+    table {
+        margin-block: 56px;
+    }
+
+    //余白(間隔)
+    p + p {
+        margin-top: 20px;
+    }
+
+    p + ul,
+    p + ol,
+    ul + p,
+    ol + p,
+    ul + ol,
+    ol + ul {
+        margin-top: 20px;
+    }
+    p + h2,
+    ul + h2,
+    ol + h2,
+    figure + h2,
+    table + h2 {
+        margin-top: 80px;
+    }
+    p + h3,
+    ul + h3,
+    ol + h3,
+    figure + h3,
+    table + h3 {
+        margin-top: 56px;
+    }
+    p + h4,
+    ul + h4,
+    ol + h4,
+    figure + h4,
+    table + h4  {
+        margin-top: 24px;
+    }
+    table + table {
+        margin-top: 56px;
+    }
+}
+
+
+// 目次のカスタマイズ
+#toc {
+    padding: 36px 44px 32px;
+
+    .toc__title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    //第1階層(h2のリスト)
+    .list_2 {
+        //カウンタの値をリセット
+        counter-reset: li;
+        li:has(ol) {
+            list-style: none;
+            position: relative;
+            &::before {
+                //カウンタの設定
+                counter-increment: li;
+                content: counter(li)'.';
+                position: absolute;
+                //スタイル
+                top: .2em;
+                left: -1.5em;
+                color:#0500E3;
+                font-weight: 700;
+            }
+        }
+        li:has(ol) + li {
+            margin-top: 16px;
+        }
+        a {
+            color: #0500E3;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+            padding-block: 4px;
+        }
+    }
+
+    li.js-active > a {
+        text-decoration: underline;
+    }
+
+    .list_3 {
+        list-style: none;
+        a {
+            color: #111;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}

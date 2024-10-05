@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>タイトル - Before</title>
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <section>
+        <div class="inner --narrow">
+          <h2 class="c-title__h2">もうtransformプロパティは使わない！</h2>
+          <h3 class="c-title__h3">translate / scale / rotate / skewプロパティ</h3>
+
+          <div class="star">
+            <!-- 動く前 -->
+            <img class="star-img --default" src="/common/img/star.png" alt="星の画像" width="200" height="152" loading="lazy" />
+            <!-- 動いた後 -->
+            <img class="star-img --action" src="/common/img/star.png" alt="星の画像" width="200" height="152" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="inner --narrow">
+          <h2 class="c-title__h2">CSS アニメーション完全マスター</h2>
+          <h3 class="c-title__h3">keyframes / animation プロパティ</h3>
+          <div class="animation-box">
+            <img class="animation-star" src="/common/img/star.png" alt="星のイラスト" width="167" height="127" loading="lazy" />
+            <img class="animation-space" src="/common/img/space.png" alt="宇宙のイラスト" width="180" height="180" loading="lazy" />
+            <img class="animation-moon" src="/common/img/moon.png" alt="星のイラスト" width="130" height="130" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="drone">
+        <div class="inner --narrow">
+          <h2 class="c-title__h2">チャレンジ1</h2>
+          <h3 class="c-title__h3">ドローンが飛んでいるように作ってみよう</h3>
+          <div class="animation-drone-box">
+            <img class="animation-drone" src="/common/img/drone.png" alt="ドローンの画像" width="400" height="300" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="horror">
+        <div class="inner --narrow">
+          <h2 class="c-title__h2 --white">チャレンジ2</h2>
+          <h3 class="c-title__h3 --white">ホラー風に</h3>
+          <div class="animation-horror-box">
+            <img class="animation-horror" src="/common/img/text_horror.svg" alt="HORROR" width="400" height="300" loading="lazy" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

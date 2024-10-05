@@ -1,0 +1,501 @@
+main {
+  padding-block: 100px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+//0302A ================
+.btn--0302A {
+  .btn__link {
+    display: inline-block;
+    padding-block: 18px;
+    padding-left: 32px;
+    padding-right: 204px;
+    font-size: 32px;
+    line-height: 1.5;
+    border: 1px solid #d8d5d1;
+    transition: border 0.5s ease;
+    span {
+      position: relative;
+      display: inline-block;
+      //横棒
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% + 4px);
+        translate: 0 -50%;
+        left: calc(100% + 18px);
+        width: 60px;
+        height: 2px;
+        background: #d8d5d1;
+        transition: width 0.5s ease;
+      }
+      //斜め棒
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 1.7px);
+        translate: 0 -50%;
+        rotate: 45deg;
+        left: calc(100% + 64px);
+        width: 16px;
+        height: 2px;
+        background: #d8d5d1;
+        transition: left 0.5s ease;
+      }
+    }
+
+    //hover時
+    @media (any-hover: hover) {
+      &:hover {
+        border: 1px solid #000;
+        span::before {
+          background: #000;
+          width: 140px;
+        }
+        span::after {
+          background: #000;
+          left: calc(100% + 144px);
+        }
+      }
+    }
+  }
+}
+
+//0302B ================
+.btn--0302B {
+  margin-top: 100px;
+
+  .btn__link {
+    display: inline-block;
+    padding: 12px 180px 20px 0;
+
+    //hover時
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__link-arrow {
+          width: 120px;
+        }
+        .btn__link-circle {
+          background: #fff500;
+        }
+      }
+    }
+  }
+  .btn__link-text {
+    position: relative;
+    display: inline-block;
+    font-size: 32px;
+    line-height: 1.5;
+  }
+  .btn__link-arrow {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% + 5px);
+    translate: 0 -50%;
+    left: calc(100% + 21.4px);
+    width: 60px;
+    height: 1px;
+    background: #000;
+    transition: width 0.5s ease;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 16px;
+      height: 1px;
+      background: #000;
+      rotate: 45deg;
+      transform-origin: right center;
+    }
+  }
+  .btn__link-circle {
+    position: absolute;
+    top: calc(50% + 5px);
+    translate: 0 -50%;
+    left: calc(100% + 102px);
+    width: 80px;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid #000;
+    transition: background 0.5s ease;
+  }
+}
+
+//0302C ================
+.btn--0302C {
+  margin-top: 100px;
+
+  .btn__link {
+    display: inline-block;
+    padding: 10px 110px 10px 34px;
+    border: 1px solid #47df00;
+    background: #47df00;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: #fff;
+      scale: 0 1;
+      transform-origin: left center;
+      transition: scale 0.5s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          scale: 1 1;
+        }
+        .btn__link-text,
+        .btn__link-arrow {
+          color: #47df00;
+        }
+        .btn__link-arrow {
+          left: calc(100% + 56px);
+        }
+      }
+    }
+  }
+  .btn__link-text,
+  .btn__link-arrow {
+    font-size: 32px;
+    line-height: 1.5;
+    color: #fff;
+    transition: color 0.2s ease;
+  }
+  .btn__link-text {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+  }
+  .btn__link-arrow {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    left: calc(100% + 28px);
+    transition: left 0.5s ease;
+  }
+}
+
+//0302D ================
+.btn--0302D {
+  margin-top: 100px;
+
+  .btn__link {
+    display: flex;
+    align-items: center;
+    column-gap: 26px;
+    width: fit-content;
+
+    //hover
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__link-arrow {
+          &::after {
+            opacity: 0;
+          }
+          svg path {
+            fill: #506cfc;
+          }
+        }
+        .btn__link-text {
+          &::before {
+            scale: 1 1;
+            transform-origin: left center;
+          }
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .btn__link-arrow {
+    width: 60px;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid #506cfc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    overflow: hidden;
+    svg {
+      width: 28px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+      path {
+        transition: fill 0.3s ease;
+      }
+    }
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(133deg, #506cfc 0%, #04198a 86.79%);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+  .btn__link-text {
+    color: #a9a2fe;
+    font-size: 32px;
+    line-height: 1.5;
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: #04198a;
+      scale: 0 0;
+      transform-origin: right center;
+      transition: scale 0.5s ease;
+    }
+
+    &::after {
+      content: 'View more';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 32px;
+      line-height: 1.5;
+      background: linear-gradient(90deg, #a9a2fe 0%, #00057c 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+//0302E ================
+.btn--0302E {
+  margin-top: 200px;
+  .btn__link-wrap {
+    position: relative;
+    img {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: 24px;
+      width: 160px;
+      height: auto;
+      pointer-events: none;
+    }
+  }
+
+  .btn__link {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-block: 34px;
+    padding-inline: 20px;
+    width: 660px;
+    background: #0038ff;
+    text-align: center;
+    span {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #fff;
+    }
+    transition: opacity 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+//0302F ================
+.btn--0302F {
+  margin-top: 100px;
+  text-align: center;
+
+  .btn__link {
+    display: inline-block;
+    //hover
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__link-img-wrap img {
+          scale: 1.2;
+        }
+      }
+    }
+  }
+  .btn__link-img-wrap {
+    width: 500px;
+    height: auto;
+    border: 10px solid red;
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: scale 0.3s ease;
+    }
+  }
+}
+
+//0302G ================
+.btn--0302G {
+  margin-top: 100px;
+  text-align: center;
+
+  .btn__link {
+    display: inline-block;
+    overflow: hidden;
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__link-text-wrap {
+          translate: 0 -100%;
+        }
+      }
+    }
+  }
+  .btn__link-text-wrap {
+    transition: translate 0.3s ease;
+    position: relative;
+  }
+  .btn__link-text {
+    font-size: 28px;
+    line-height: 1.5;
+    &.--en {
+      padding-inline: 20px;
+    }
+    &.--ja {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 50%;
+      translate: -50%;
+      width: 100%;
+    }
+  }
+}
+
+//0302H ================
+.btn--0302H {
+  margin-top: 100px;
+  text-align: center;
+
+  .btn__link {
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+    padding: 8px 40px;
+    border: 1px solid #001275;
+    border-radius: 100vmax;
+    width: fit-content;
+    transition: background 0.3s ease;
+    overflow: hidden;
+
+    //hover時
+    @media (any-hover: hover) {
+      &:hover {
+        background: #001275;
+        .btn__link-text {
+          color: #fff;
+        }
+        .btn__link-arrow-wrap {
+          translate: 100% -100%;
+        }
+      }
+    }
+  }
+  .btn__link-text {
+    font-size: 32px;
+    line-height: 1.5;
+    color: #001275;
+    transition: color 0.3s ease;
+  }
+  .btn__link-arrow-wrap {
+    position: relative;
+    transition: translate 0.3s ease;
+  }
+  .btn__link-arrow {
+    margin-top: 4px;
+    width: 21px;
+    height: 21px;
+    &.--white {
+      position: absolute;
+      top: 100%;
+      left: -100%;
+    }
+  }
+}
+
+//0302I ================
+.btn--0302I {
+  margin-top: 100px;
+  text-align: center;
+
+  .btn__link {
+    display: inline-block;
+    padding: 30px 92px 30px 0;
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__link-arrow,
+        .btn__link-circle {
+          top: -14px;
+          right: -94px;
+        }
+      }
+    }
+  }
+  .btn__link-text {
+    display: inline-block;
+    font-size: 32px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .btn__link-arrow {
+    position: absolute;
+    z-index: 2;
+    top: -2px;
+    right: -68px;
+    width: 80px;
+    height: auto;
+    aspect-ratio: 1;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    svg {
+      margin-top: -6px;
+      width: 48px;
+      height: auto;
+    }
+  }
+  .btn__link-circle {
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    right: -92px;
+    background: #d9d9d9;
+    width: 80px;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+}

@@ -1,0 +1,157 @@
+//=====================================
+//  見た目を整えるCSS
+//=====================================
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.card {
+  padding-block: 100px;
+  overflow: hidden;
+}
+.card__inner {
+  width: min(calc(840px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  position: relative;
+}
+.card__swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: auto;
+  aspect-ratio: 1;
+  background: #0073ed;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.card__swiper-container,
+.card__swiper,
+.card__swiper-wrapper,
+.card__swiper-slide {
+  position: relative;
+}
+.card__swiper-container {
+}
+.card__swiper {
+  overflow: visible;
+}
+.card__swiper-wrapper {
+}
+.card__swiper-slide {
+}
+.card__swiper-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 33px;
+  column-gap: 14.5px;
+}
+
+//位置のreset
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: relative;
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+// =============================
+// ナビゲーションボタン
+// =============================
+//デフォルトのボタンを初期化
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: ''; //デフォルトのものを初期化
+}
+//各ボタンのカスタマイズ
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+
+// =============================
+// ページネーション (bullets)
+// =============================
+//位置の設定 (枠組み)
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: fit-content;
+}
+//それぞれのページネーション
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+  opacity: 1;
+  width: 12px;
+  height: auto;
+  aspect-ratio: 1;
+  background: #d9d9d9;
+  margin-inline: calc(11px / 2);
+}
+//activeな部分
+.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+// =============================
+// 本題のCSS
+// =============================
+.mouse-stalker-area {
+  cursor: none;
+}
+
+#js-mouse {
+  pointer-events: none;
+  cursor: none;
+  position: fixed;
+  z-index: 9999;
+
+  //カーソルに対しての位置とサイズ
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  transform: translate(0, 0);
+
+  //デフォルト時のスタイル
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+
+  //矢印のカスタマイズ
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  span {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+
+  &.js-hover {
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    //アクション時に変化させるスタイル
+    top: -35px;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    span {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

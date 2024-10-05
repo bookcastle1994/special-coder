@@ -1,0 +1,53 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+section {
+  padding-block: 100px;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.animation__text {
+  font-size: 80px;
+  line-height: 1.5;
+  font-weight: 700;
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    animation: 0.5s 1s ease forwards slideUp;
+    translate: 0 100%;
+  }
+  @keyframes slideUp {
+    0% {
+      translate: 0 100%;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+
+  margin-bottom: 100px;
+}
+
+.animation__text2 {
+  font-size: 80px;
+  line-height: 0.9;
+  font-weight: 700;
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    animation: 0.5s 1s ease forwards slideUp;
+    translate: 0 100%;
+    @keyframes slideUp {
+      0% {
+        translate: 0 100%;
+      }
+      100% {
+        translate: 0 0;
+      }
+    }
+  }
+}

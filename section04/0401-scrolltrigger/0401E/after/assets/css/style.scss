@@ -1,0 +1,198 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+button {
+  color: inherit;
+  background: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.scroll-section {
+  height: 50vh;
+  background: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.news {
+  background: #d6eeff;
+  padding-block: 116px 81px;
+}
+.news__inner {
+  width: min(calc(880px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.news__tablist {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.news__tab {
+  text-align: left;
+  color: #8e8e8e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 19px;
+
+  &[aria-selected='true'] {
+    color: #000;
+    position: relative;
+    pointer-events: none;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      left: 0;
+      width: 8px;
+      height: auto;
+      aspect-ratio: 1;
+      background: #000;
+      border-radius: 50%;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.news__contents {
+  width: 682px;
+}
+.news__content-wrap {
+  border-top: 1px solid #000;
+
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  translate: 0 20px;
+  transition: opacity 1s ease, translate 0.5s ease;
+  &.js-show {
+    opacity: 1;
+    visibility: visible;
+    height: fit-content;
+    translate: 0;
+  }
+}
+.news__content {
+  padding: 17px 9px;
+  border-bottom: 1px solid #000;
+}
+.news__content-meta {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 15px;
+}
+.news__content-time {
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+.news__content-category {
+  padding: 3px 10px;
+  min-width: 88px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(90deg, #000f95 0%, #6f4df6 100%);
+}
+.news__content-text {
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+//goal-plan ==========
+.goal-plan__container {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: 100px;
+}
+.goal-plan__item-img-wrap {
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.goal-plan__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.goal-plan__item-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  padding-inline: 10px;
+  margin-bottom: 16px;
+}
+.goal-plan__item-text {
+  padding-inline: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+//片側から出現
+.animated__clipView {
+  // before (出現前)
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s ease;
+
+  // after (出現後)
+  &.js-show {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.animated__fadeIn {
+  // before (出現前)
+  opacity: 0;
+  // translate: 0 20px;
+  transition: opacity 0.5s ease;
+
+  // after (出現後)
+  &.js-show {
+    opacity: 1;
+    // translate: 0;
+  }
+}
+//下から出現する
+.animated__underText {
+  overflow: hidden;
+  span {
+    // before (出現前)
+    display: inline-block;
+    translate: 0 100%;
+    transition: translate 0.5s ease;
+  }
+  // after (出現後)
+  &.js-show span {
+    translate: 0;
+  }
+}

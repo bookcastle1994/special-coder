@@ -1,0 +1,65 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.fv {
+  height: 600px;
+  background: #d9d9d9;
+  font-size: 60px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section {
+  height: 250vh;
+  font-size: 60px;
+  font-weight: 700;
+  padding-top: 100px;
+  text-align: center;
+}
+.contact {
+  height: 120vh;
+  font-size: 60px;
+  font-weight: 700;
+  padding-top: 100px;
+  text-align: center;
+  background: #f0f2a8;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: linear-gradient(92deg, #010036 0%, #04019c 100%);
+  padding-block: 15px;
+
+  //出現前
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  &.js-show {
+    //出現後
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.cta__text {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}

@@ -1,0 +1,84 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+
+// ================================
+//  本題のCSS
+// ================================
+main {
+    width: min(1040px,100%);
+    margin-inline: auto;
+    margin-top: 100px;
+    padding-inline: 20px;
+}
+.table-wrap {
+    width: 100%;
+    margin-inline: auto;
+    padding-bottom: 30px;
+    overflow-x: auto;
+
+    //scroll-bar
+    &::-webkit-scrollbar {
+        height: 10px; //高さ
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #E2E2E2; //背景色
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #0500E3; //アクティブな箇所の色
+    }
+}
+.table {
+    width: 1000px;
+}
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid #0500F9;
+}
+.table-head {
+    background: #0500F9;
+    padding-block: 15px;
+    padding-inline: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 150% */
+    color: #fff;
+}
+.table-side-head {
+    background: #0500F9;
+    padding-block: 28px;
+    padding-inline: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+.table-data {
+    padding-block: 28px;
+    padding-inline: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    &.--main {
+        background: rgb(198, 194, 255);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 100% */
+    }
+}
+
+.table-scroll-fixed01 {
+    position: sticky;
+    left: 0;
+}
+.table-scroll-fixed02 {
+    position: sticky;
+    left: 199px;
+}

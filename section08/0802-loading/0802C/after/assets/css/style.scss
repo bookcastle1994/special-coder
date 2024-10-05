@@ -1,0 +1,60 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.after__text {
+  padding-block: 200px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 100;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  clip-path: circle(100% at 50% 50%);
+  transition: clip-path 1.5s ease;
+  &.js-loading-end {
+    clip-path: circle(0 at 150% -50%);
+  }
+}
+.loading__container {
+  position: relative;
+  width: 500px;
+}
+.loading__text {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px; /* 150% */
+  margin-bottom: 8px;
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    animation: 0.5s 0.3s ease forwards slideUp;
+    translate: 0 100%;
+  }
+  @keyframes slideUp {
+    0% {
+      translate: 0 100%;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+}

@@ -1,0 +1,358 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+main {
+  margin-block: 100px;
+}
+.star {
+  position: relative;
+  margin-bottom: 60px;
+}
+.star-img {
+  width: 200px;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  &.--default {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0.3;
+  }
+}
+section {
+  padding-block: 100px;
+}
+.test {
+}
+
+// ================================
+//  本題のCSS -- 1
+// ================================
+.star-img {
+  &.--action {
+    // display: none;
+    position: relative;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+  }
+}
+
+//===============================================
+
+// ================================
+//  見た目を整えるCSS
+// ================================
+.animation-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ================================
+//  本題のCSS -- 2
+// ================================
+.animation-star {
+  animation-name: animationStar;
+  animation-fill-mode: forwards;
+  animation-duration: 0.3s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease;
+  @keyframes animationStar {
+    0% {
+      opacity: 0;
+      translate: 100px -100px;
+    }
+
+    100% {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+  //== Detail ===============================================
+  // animation-name
+  //  keyframesで指定したアニメーションの名前
+  // animation-fill-mode
+  //  backwards：待ち時間にアニメーション開始時のスタイルが適用
+  //  forwards：再生後アニメーション終了時のスタイルが適用
+  //  both: 上記両方適用
+  // animation-duration
+  //  アニメーションの開始から終了までの時間
+  // animation-iteration-count
+  //  アニメーションを繰り返す回数 (無限の場合は infinite)
+  // animation-delay
+  //  アニメーションの開始時間の設定
+  // animation-direction
+  //  infinite指定の場合の繰り返しの方向を指定
+  //  reverse: 逆方向
+  //  alternate: 順方向と逆方向が交互に再生
+  //  alternate-reverse: 逆方向から再生し、alternateの振る舞い
+  // animation-timing-function
+  //  linear: 一定速度　　　　ease: 開始・終了時緩やか
+  //  ease-in: 開始時緩やか　 ease-out: 終了時緩やか
+  //  ease-in-out: easeよりもさらに緩やか
+  //=========================================================
+}
+
+.animation-space {
+  animation: 3s 1s ease forwards animationSpace;
+  scale: 0;
+  opacity: 0;
+  translate: 0 0;
+  @keyframes animationSpace {
+    0% {
+      scale: 0;
+      opacity: 0;
+      translate: 0 0;
+    }
+    50% {
+      scale: 1;
+      opacity: 1;
+      translate: 0 0;
+    }
+    70% {
+      scale: 1;
+      opacity: 1;
+      translate: 0 0;
+    }
+    100% {
+      opacity: 0;
+      scale: 1;
+      translate: 0 300%;
+    }
+  }
+}
+
+.animation-moon {
+  animation: 2s 1s linear backwards infinite animationMoon;
+  @keyframes animationMoon {
+    0% {
+      rotate: 0deg;
+    }
+    10% {
+      rotate: 0deg;
+    }
+    30% {
+      rotate: 30deg;
+    }
+    70% {
+      rotate: -30deg;
+    }
+    90% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 0deg;
+    }
+  }
+}
+
+//===============================================
+
+// ================================
+//  見た目を整えるCSS
+// ================================
+.drone {
+  background: #caf8fe;
+}
+.horror {
+  background: #000;
+}
+.animation-drone-box {
+  text-align: center;
+}
+.animation-horror-box {
+  text-align: center;
+}
+
+// ================================
+//  本題のCSS -- 3
+// ================================
+
+.animation-drone {
+  width: 400px;
+  height: auto;
+
+  animation-name: drone;
+  animation-fill-mode: forwards;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+  @keyframes drone {
+    0% {
+      translate: 0 10px;
+    }
+    4% {
+      translate: 0 -10px;
+    }
+    10% {
+      translate: 0 0;
+    }
+    20% {
+      translate: 10px -10px;
+    }
+    30% {
+      translate: 0 -30px;
+    }
+    40% {
+      translate: -10px -10px;
+    }
+    50% {
+      translate: 0 -20px;
+    }
+    60% {
+      translate: 10px 0;
+    }
+    70% {
+      translate: 10px -20px;
+    }
+    80% {
+      translate: 20px -10px;
+    }
+    90% {
+      translate: 20px -20px;
+    }
+    92% {
+      translate: 10px 0px;
+    }
+    100% {
+      translate: 0px 10px;
+    }
+  }
+}
+
+.animation-horror {
+  width: 600px;
+  height: auto;
+
+  animation-name: horror;
+  animation-fill-mode: backwards;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  @keyframes horror {
+    0% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    1% {
+      opacity: 0;
+      translate: 0 0;
+    }
+    2% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    7% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    8% {
+      opacity: 0;
+      translate: -4px 0;
+    }
+    9% {
+      opacity: 1;
+      translate: 4px 0;
+    }
+    10% {
+      opacity: 0;
+      translate: 0px 0;
+    }
+    11% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    39% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    40% {
+      opacity: 0;
+      translate: 8px 0;
+    }
+    41% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    42% {
+      opacity: 0;
+      translate: 8px 0;
+    }
+    43% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    44% {
+      opacity: 0;
+      translate: 8px 0;
+    }
+    45% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    69% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    70% {
+      opacity: 1;
+      translate: 8px 0;
+    }
+    71% {
+      opacity: 0;
+      translate: 0 0;
+    }
+    72% {
+      opacity: 1;
+      translate: 8px 0;
+    }
+    73% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    75% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    76% {
+      opacity: 0;
+      translate: -8px 0;
+    }
+    77% {
+      opacity: 1;
+      translate: 0 0;
+    }
+    78% {
+      opacity: 0;
+      translate: -8px 0;
+    }
+    79% {
+      opacity: 1;
+      translate: 0px 0;
+    }
+    80% {
+      opacity: 0;
+      translate: -8px 0;
+    }
+    81% {
+      opacity: 1;
+      translate: 0px 0;
+    }
+    82% {
+      opacity: 0;
+      translate: -8px 0;
+    }
+    83% {
+      opacity: 1;
+      translate: 0px 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}

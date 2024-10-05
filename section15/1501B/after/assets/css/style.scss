@@ -1,0 +1,158 @@
+//=====================================
+//  変数
+//=====================================
+$pc_camp: 1240; //pcカンプの幅
+$sp_camp: 375; //spカンプの幅
+$breakpoint: 768;
+$pc-inner-sum: 1020;
+
+//=====================================
+//  関数
+//=====================================
+@function rm($arg) {
+  @return calc($arg / 16 * 1rem);
+}
+@function px($arg) {
+  @return calc($arg * 1px);
+}
+
+//=====================================
+//  ブレイクポイント
+//=====================================
+$breakpoints: (
+  //キー : 値
+  'sp': 'screen and (max-width: #{$breakpoint - 1px})',
+  'pc': '(min-width: #{$breakpoint * 1px})'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// =================================
+//  フォント情報の一括入力
+// =================================
+
+@mixin font($size: null, $weight: null, $height: null, $spacing: null) {
+  @if $size {
+    font-size: calc($size / 16 * 1rem);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $spacing {
+    letter-spacing: calc($spacing / $size * 1em);
+  }
+}
+
+//=====================================
+//  実際のコード
+//=====================================
+html {
+  @media screen and (max-width: #{px($pc-inner-sum) - 1px}) and (min-width: #{px($breakpoint)}) {
+    font-size: calc(16 / #{$pc-inner-sum} * 100vw);
+  }
+  @media screen and (max-width: #{px($breakpoint) - 1px}) {
+    font-size: calc(16 / #{$sp-camp} * 100vw);
+  }
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.go {
+  padding-block: rm(100);
+  @include mq(sp) {
+    padding-block: rm(60);
+  }
+}
+.go__inner {
+  width: min(calc(rm(940) + rm(20) * 2), 100%);
+  padding-inline: rm(20);
+  margin-inline: auto;
+  @include mq(sp) {
+    width: min(calc(rm(345) + rm(20) * 2), 100%);
+    padding-inline: rm(20);
+    margin-inline: auto;
+  }
+}
+.go__items {
+  display: flex;
+  flex-direction: column;
+  row-gap: rm(80);
+  @include mq(sp) {
+    row-gap: rm(50);
+  }
+}
+.go__item {
+  display: flex;
+  column-gap: rm(40);
+  align-items: center;
+  @include mq(sp) {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'img'
+      'text';
+    grid-template-columns: 1fr;
+  }
+}
+.go__img {
+  width: 50vw;
+  height: auto;
+  aspect-ratio: 620 / 350;
+  margin-left: calc((50vw - 50%) * -1);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  @include mq(sp) {
+    grid-area: img;
+    width: 100vw;
+    margin-left: rm(-20);
+    margin-right: rm(-20);
+    margin-bottom: rm(22.31);
+  }
+}
+.go__texts {
+  width: rm(430);
+  height: auto;
+  @include mq(sp) {
+    display: contents;
+  }
+}
+.go__title {
+  @include font(40, 500, 60, 0);
+  margin-bottom: rm(30);
+  @include mq(sp) {
+    grid-area: title;
+    font-size: rm(24);
+    margin-bottom: rm(20);
+  }
+}
+.go__text {
+  @include font(20, 500, 30, 0);
+  @include mq(sp) {
+    grid-area: text;
+    font-size: rm(14);
+  }
+}
+
+//偶数番目のitemに適用
+.go__item:nth-of-type(even) {
+  flex-direction: row-reverse;
+  .go__img {
+    margin-left: 0;
+    margin-right: calc((50vw - 50%) * -1);
+    @include mq(sp) {
+      margin-left: rm(-20);
+      margin-right: rm(-20);
+    }
+  }
+}

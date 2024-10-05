@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <div class="scroll-section">scroll</div>
+
+      <div class="news">
+        <div class="news__inner">
+          <div class="news__tablist" role="tablist">
+            <button class="news__tab" role="tab" id="tab-all" aria-controls="panel-all" aria-selected="true" tabindex="0">すべて</button>
+            <button class="news__tab" role="tab" id="tab1" aria-controls="panel1" aria-selected="false" tabindex="-1">ニュース</button>
+            <button class="news__tab" role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">イベント</button>
+            <button class="news__tab" role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">採用情報</button>
+          </div>
+          <div class="news__contents">
+            <div class="news__content-wrap js-show" role="tabpanel" id="panel-all" aria-labelledby="tab-all" tabindex="0">
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">日本ベスト観光スポット10にランクインしました！</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">イベント</p>
+                </div>
+                <p class="news__content-text">2024年12月24日にクリスマスイベントを実施します。詳細は <a href="" target="_blank" rel="noopener noreferrer">こちら</a>からご確認ください。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">ホームページをリニューアルしました。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">イベント</p>
+                </div>
+                <p class="news__content-text">先日開催された盆踊り大会は約2万人の方にご来場いただき、無事終了いたしました。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">採用情報</p>
+                </div>
+                <p class="news__content-text">令和7年度 正社員を募集します。<a href="" target="_blank" rel="noopener noreferrer">採用情報</a>ページから募集要項をご確認をください。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">ホームページを公開しました。</p>
+              </div>
+            </div>
+            <div class="news__content-wrap" role="tabpanel" id="panel1" aria-labelledby="tab1" tabindex="0">
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">日本ベスト観光スポット10にランクインしました！</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">ホームページをリニューアルしました。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">ニュース</p>
+                </div>
+                <p class="news__content-text">ホームページを公開しました。</p>
+              </div>
+            </div>
+            <div class="news__content-wrap" role="tabpanel" id="panel2" aria-labelledby="tab2" tabindex="0">
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">イベント</p>
+                </div>
+                <p class="news__content-text">2024年12月24日にクリスマスイベントを実施します。詳細は <a href="" target="_blank" rel="noopener noreferrer">こちら</a>からご確認ください。</p>
+              </div>
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">イベント</p>
+                </div>
+                <p class="news__content-text">先日開催された盆踊り大会は約2万人の方にご来場いただき、無事終了いたしました。</p>
+              </div>
+            </div>
+            <div class="news__content-wrap" role="tabpanel" id="panel3" aria-labelledby="tab3" tabindex="0">
+              <div class="news__content">
+                <div class="news__content-meta">
+                  <p class="news__content-time">2024.01.01</p>
+                  <p class="news__content-category">採用情報</p>
+                </div>
+                <p class="news__content-text">令和7年度 正社員を募集します。<a href="" target="_blank" rel="noopener noreferrer">採用情報</a>ページから募集要項をご確認をください。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner --normal">
+        <div class="goal-plan__container">
+          <div class="goal-plan__item">
+            <div class="goal-plan__item-img-wrap animated__clipView">
+              <picture>
+                <img class="goal-plan__item-img" src="/common/img/section04/reverse-thinking.jpg" alt="reverse thinking" width="346" height="346" loading="lazy" />
+              </picture>
+            </div>
+            <h4 class="goal-plan__item-title animated__underText"><span>逆算思考</span></h4>
+            <p class="goal-plan__item-text animated__fadeIn">目標達成のためには、最終ゴールから逆算して計画を立てる逆算思考が効果的です。これにより、各ステップが明確になり、効率的に進行することができます。</p>
+          </div>
+          <div class="goal-plan__item">
+            <div class="goal-plan__item-img-wrap animated__clipView">
+              <picture>
+                <img class="goal-plan__item-img" src="/common/img/section04/check-in.jpg" alt="check in" width="346" height="346" loading="lazy" />
+              </picture>
+            </div>
+            <h4 class="goal-plan__item-title animated__underText"><span>定期的なチェックイン</span></h4>
+            <p class="goal-plan__item-text animated__fadeIn">定期的に目標の進捗をチェックし、必要に応じて計画を修正することが重要です。進捗を可視化することで、目標達成に向けたモチベーションを維持しやすくなります。</p>
+          </div>
+          <div class="goal-plan__item">
+            <div class="goal-plan__item-img-wrap animated__clipView">
+              <picture>
+                <img class="goal-plan__item-img" src="/common/img/section04/resource.jpg" alt="resource" width="346" height="346" loading="lazy" />
+              </picture>
+            </div>
+            <h4 class="goal-plan__item-title animated__underText"><span>効率的なリソース配分</span></h4>
+            <p class="goal-plan__item-text animated__fadeIn">リソースを効率的に配分することは、目標達成のために不可欠です。人材、時間、予算などのリソースを最適に活用し、各タスクに適切なリソースを割り当てることで、全体の効率を高めることができます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-section">scroll</div>
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

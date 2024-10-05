@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <div class="member">
+        <div class="member__inner">
+          <div class="member__items">
+            <div class="member__item">
+              <picture>
+                <source srcset="/common/img/section08/human_img1.png" media="(min-width: 768px)" />
+                <img class="member__item-img" src="/common/img/section08/human_img1.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+              </picture>
+              <button class="modal__open-btn" data-dialog="modal1"><span>&plus;</span></button>
+            </div>
+            <div class="member__item">
+              <picture>
+                <source srcset="/common/img/section08/human_img2.png" media="(min-width: 768px)" />
+                <img class="member__item-img" src="/common/img/section08/human_img2.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+              </picture>
+              <button class="modal__open-btn" data-dialog="modal2"><span>&plus;</span></button>
+            </div>
+            <div class="member__item">
+              <picture>
+                <source srcset="/common/img/section08/human_img3.png" media="(min-width: 768px)" />
+                <img class="member__item-img" src="/common/img/section08/human_img3.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+              </picture>
+              <button class="modal__open-btn" data-dialog="modal3"><span>&plus;</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <dialog id="modal1" aria-labelledby="modal-head1" aria-describedby="modal-text1" class="modal__content">
+      <button class="modal__close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44" fill="none">
+          <line x1="1.35355" y1="0.827004" x2="43.78" y2="43.2534" stroke="black" />
+          <line x1="1.16012" y1="43.0729" x2="43.5865" y2="0.646447" stroke="black" />
+        </svg>
+      </button>
+      <div class="modal__inner">
+        <div class="modal__body">
+          <div class="modal__img">
+            <picture>
+              <source srcset="/common/img/section08/human_img1.png" media="(min-width: 768px)" />
+              <img src="/common/img/section08/human_img1.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+            </picture>
+          </div>
+          <div class="modal__text">
+            <h3 id="modal-head1" class="modal__text-head">山田 太郎</h3>
+            <div id="modal__text1">
+              <p class="modal__text-career">代表取締役社長</p>
+              <div class="modal__text-wrap">
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+              <div class="modal__text-history">
+                <p class="head">略歴</p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="modal2" aria-labelledby="modal-head2" aria-describedby="modal-text2" class="modal__content">
+      <button class="modal__close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44" fill="none">
+          <line x1="1.35355" y1="0.827004" x2="43.78" y2="43.2534" stroke="black" />
+          <line x1="1.16012" y1="43.0729" x2="43.5865" y2="0.646447" stroke="black" />
+        </svg>
+      </button>
+      <div class="modal__inner">
+        <div class="modal__body">
+          <div class="modal__img">
+            <picture>
+              <source srcset="/common/img/section08/human_img2.png" media="(min-width: 768px)" />
+              <img src="/common/img/section08/human_img2.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+            </picture>
+          </div>
+          <div class="modal__text">
+            <h3 id="modal-head2" class="modal__text-head">山田 太郎2</h3>
+            <div id="modal__text2">
+              <p class="modal__text-career">代表取締役社長</p>
+              <div class="modal__text-wrap">
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+              <div class="modal__text-history">
+                <p class="head">略歴</p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="modal3" aria-labelledby="modal-head3" aria-describedby="modal-text3" class="modal__content">
+      <button class="modal__close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44" fill="none">
+          <line x1="1.35355" y1="0.827004" x2="43.78" y2="43.2534" stroke="black" />
+          <line x1="1.16012" y1="43.0729" x2="43.5865" y2="0.646447" stroke="black" />
+        </svg>
+      </button>
+      <div class="modal__inner">
+        <div class="modal__body">
+          <div class="modal__img">
+            <picture>
+              <source srcset="/common/img/section08/human_img3.png" media="(min-width: 768px)" />
+              <img src="/common/img/section08/human_img3.png" alt="山田さんの画像" width="300" height="450" loading="lazy" />
+            </picture>
+          </div>
+          <div class="modal__text">
+            <h3 id="modal-head2" class="modal__text-head">山田 太郎3</h3>
+            <div id="modal__text2">
+              <p class="modal__text-career">代表取締役社長</p>
+              <div class="modal__text-wrap">
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+              <div class="modal__text-history">
+                <p class="head">略歴</p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+                <p class="text">
+                  <span>2000年</span>
+                  <span>テキストテキストテキストテキスト</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

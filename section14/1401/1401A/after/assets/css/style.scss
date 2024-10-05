@@ -1,0 +1,51 @@
+//=====================================
+//  見た目を整えるCSS
+//=====================================
+body {
+  min-height: 100vh;
+}
+
+.test {
+  padding-block: 200px;
+  width: min(calc(800px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  a {
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+//=====================================
+//  本題のCSS
+//=====================================
+
+#js-mouse {
+  pointer-events: none;
+  cursor: none;
+  position: fixed;
+  z-index: 9999;
+
+  //カーソルに対しての位置とサイズ
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  transform: translate(0, 0);
+
+  //デフォルト時のスタイル
+  background: #000;
+  border-radius: 50%;
+
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+
+  &.js-hover {
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    //アクション時に変化させるスタイル
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+}

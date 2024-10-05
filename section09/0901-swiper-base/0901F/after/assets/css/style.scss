@@ -1,0 +1,90 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+.card {
+  padding-block: 100px;
+  overflow: hidden;
+}
+.card__inner {
+  width: min(calc(540px + 20px * 2), 100%);
+  padding-inline: 20px;
+  margin-inline: auto;
+  position: relative;
+}
+.card__swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+.card__swiper-container {
+  position: relative;
+}
+.card__swiper-slide {
+  width: 100;
+  height: auto;
+  aspect-ratio: 540 / 296;
+  &.--slide1 {
+    background: #d9d9d9;
+  }
+  &.--slide2 {
+    background: lightblue;
+  }
+  &.--slide3 {
+    background: pink;
+  }
+  &.--slide4 {
+    background: yellow;
+  }
+  &.--slide5 {
+    background: yellowgreen;
+  }
+}
+
+// ================================
+//  本題のCSS
+// ================================
+//分数表示の部分
+.swiper-pagination-fraction {
+  top: 20px;
+  bottom: unset;
+  left: unset;
+  right: 20px;
+  width: fit-content;
+  font-size: 20px;
+  display: flex;
+  column-gap: 8px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 40px;
+    height: 1px;
+    rotate: -60deg;
+    background: #000;
+  }
+}
+//デフォルトの / を消す
+.swiper-pagination-separator {
+  opacity: 0;
+}
+.swiper-pagination-current,
+.swiper-pagination-total {
+  color: #000;
+  font-size: 20px;
+  line-height: normal;
+  display: inline-block;
+}
+//現在の数字 (上)
+.swiper-pagination-current {
+  margin-bottom: 15px;
+}
+//全体の数字 (下)
+.swiper-pagination-total {
+  margin-top: 15px;
+}

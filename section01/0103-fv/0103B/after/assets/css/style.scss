@@ -1,0 +1,38 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+section {
+  padding-block: 100px;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+
+.animation__text {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 700;
+
+  .char {
+    //初期の状態
+    opacity: 0;
+  }
+
+  margin-bottom: 100px;
+}
+
+.animation__text2 {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 700;
+
+  .char {
+    //初期の状態
+    translate: 0 100%;
+  }
+
+  span {
+    overflow: hidden;
+  }
+}

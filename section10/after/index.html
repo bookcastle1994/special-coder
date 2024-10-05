@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After</title>
+    
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/common/css/reset.css">
+    <link rel="stylesheet" href="/common/css/base.css">
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <header></header>
+
+    <main>
+
+        <section class="contact">
+            <div class="contact__inner">
+                <h2 class="contact__title">Contact</h2>
+                <form action="" class="contact__form" id="contact-form">
+                    <div class="contact__row">
+                        <p class="contact__head"><span class="--must">名前</span></p>
+                        <div class="contact__data">
+                            <input type="text" placeholder="山田 太郎" id="inName">
+                            <p class="contact__error-message" id="emName"></p>
+                        </div>
+                    </div>
+                    <div class="contact__row">
+                        <p class="contact__head"><span class="--must">メールアドレス</span></p>
+                        <div class="contact__data">
+                            <input type="email" placeholder="info@example.com" id="inEmail">
+                            <p class="contact__error-message" id="emEmail"></p>
+                        </div>
+                    </div>
+                    <div class="contact__row">
+                        <p class="contact__head"><span class="--must">職業</span></p>
+                        <div class="contact__data">
+                            <div class="contact__select-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
+                                    <line x1="0.353553" y1="0.646447" x2="8.83883" y2="9.13173" stroke="black"/>
+                                    <line x1="8.47457" y1="9.44125" x2="16.9599" y2="0.955965" stroke="black"/>
+                                </svg>
+                                <select name="occupation" id="inSelect">
+                                    <option disabled selected>選択してください</option>
+                                    <option value="選択肢1">選択肢1</option>
+                                    <option value="選択肢2">選択肢2</option>
+                                    <option value="選択肢3">選択肢3</option>
+                                    <option value="選択肢4">選択肢4</option>
+                                </select>
+                            </div>
+                            <p class="contact__error-message" id="emSelect"></p>
+                        </div>
+                    </div>
+                    <div class="contact__row --aifs">
+                        <p class="contact__head"><span>お問い合わせ種別</span></p>
+                        <div class="contact__data">
+                            <div class="contact__data-checkbox">
+                                <label for="checkbox1">
+                                    <input type="checkbox" id="checkbox1" name="kind" value="お問い合わせ種別1">
+                                    <span>お問い合わせ種別1</span>
+                                </label>
+                                <label for="checkbox2">
+                                    <input type="checkbox" id="checkbox2" name="kind" value="お問い合わせ種別2">
+                                    <span>お問い合わせ種別2</span>
+                                </label>
+                                <label for="checkbox3">
+                                    <input type="checkbox" id="checkbox3" name="kind" value="お問い合わせ種別3">
+                                    <span>お問い合わせ種別3</span>
+                                </label>
+                                <label for="checkbox4">
+                                    <input type="checkbox" id="checkbox4" name="kind" value="お問い合わせ種別4">
+                                    <span>お問い合わせ種別4</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__row">
+                        <p class="contact__head"><span>現在の状況</span></p>
+                        <div class="contact__data">
+                            <div class="contact__data-radio">
+                                <label for="radio1">
+                                    <input type="radio" id="radio1" name="status" value="高校生">
+                                    <span>高校生</span>
+                                </label>
+                                <label for="radio2">
+                                    <input type="radio" id="radio2" name="status" value="大学生" checked>
+                                    <span>大学生</span>
+                                </label>
+                                <label for="radio3">
+                                    <input type="radio" id="radio3" name="status" value="社会人">
+                                    <span>社会人</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__row --aifs">
+                        <p class="contact__head"><span class="--must">お問い合わせ内容</span></p>
+                        <div class="contact__data">
+                            <textarea name="message" id="inTextarea"></textarea>
+                            <p class="contact__error-message" id="emTextarea"></p>
+                        </div>
+                    </div>
+                    <div class="contact__acceptance contact__data-checkbox">
+                        <label for="inPrivacy">
+                            <input type="checkbox" id="inPrivacy" name="" value="acceptance">
+                            <span><a href="">プライバシーポリシー</a>に同意する</span>
+                        </label>
+                        <p class="contact__error-message" id="emPrivacy"></p>
+                    </div>
+                    <div class="contact__submit">
+                        <input type="submit" value="送信する" id="button">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

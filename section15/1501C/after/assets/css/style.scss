@@ -1,0 +1,31 @@
+// ================================
+//  見た目を整えるCSS
+// ================================
+body {
+  background: #d9d9d9;
+}
+.scroll-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+// ================================
+//  本題のCSS
+// ================================
+.pc {
+  width: min(1020px, 100%);
+  margin-inline: auto;
+}
+
+.pc__img {
+  width: 400px;
+  margin-inline: auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

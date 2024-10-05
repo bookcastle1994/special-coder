@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <div class="inner --narrow">
+        <div class="btn--0302A">
+          <a href="" class="btn__link">
+            <span>more</span>
+          </a>
+        </div>
+
+        <div class="btn--0302B">
+          <a href="" class="btn__link">
+            <span class="btn__link-text">
+              View more
+              <span class="btn__link-arrow"></span>
+              <span class="btn__link-circle"></span>
+            </span>
+          </a>
+        </div>
+
+        <div class="btn--0302C">
+          <a href="" class="btn__link">
+            <span class="btn__link-text">
+              View more
+              <span class="btn__link-arrow">&rarr;</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="btn--0302D">
+          <a href="" class="btn__link">
+            <span class="btn__link-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+                <path d="M14.3892 4.35355C14.5845 4.15829 14.5845 3.84171 14.3892 3.64645L11.2072 0.464466C11.012 0.269204 10.6954 0.269204 10.5001 0.464466C10.3049 0.659728 10.3049 0.976311 10.5001 1.17157L13.3286 4L10.5001 6.82843C10.3049 7.02369 10.3049 7.34027 10.5001 7.53553C10.6954 7.7308 11.012 7.7308 11.2072 7.53553L14.3892 4.35355ZM0 4.5H14.0357V3.5H0V4.5Z" fill="white" />
+              </svg>
+            </span>
+            <span class="btn__link-text">View more</span>
+          </a>
+        </div>
+
+        <div class="btn--0302E">
+          <div class="btn__link-wrap">
+            <img src="/common/img/moon.png" alt="" width="" height="" loading="lazy" />
+            <a href="" class="btn__link">
+              <span>もっとみる</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="btn--0302F">
+          <a href="" class="btn__link">
+            <div class="btn__link-img-wrap">
+              <img src="/common/img/section03/pc-img-game2.jpg" alt="" width="" height="" loading="lazy" />
+            </div>
+          </a>
+        </div>
+
+        <div class="btn--0302G">
+          <a href="" class="btn__link">
+            <div class="btn__link-text-wrap">
+              <p class="btn__link-text --en">Service</p>
+              <p class="btn__link-text --ja">サービス</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="btn--0302H">
+          <a href="" class="btn__link">
+            <span class="btn__link-text">詳細はこちら</span>
+            <div class="btn__link-arrow-wrap">
+              <svg class="btn__link-arrow --navy" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M12.4066 0.999996C12.4066 0.558168 12.0484 0.199995 11.6066 0.199996L4.4066 0.199996C3.96477 0.199996 3.6066 0.558168 3.6066 0.999996C3.6066 1.44182 3.96477 1.8 4.4066 1.8L10.8066 1.8L10.8066 8.2C10.8066 8.64182 11.1648 9 11.6066 9C12.0484 9 12.4066 8.64182 12.4066 8.2L12.4066 0.999996ZM1.56569 12.1723L12.1723 1.56568L11.0409 0.43431L0.434315 11.0409L1.56569 12.1723Z" fill="#001275" />
+              </svg>
+              <svg class="btn__link-arrow --white" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M12.4066 0.999996C12.4066 0.558168 12.0484 0.199995 11.6066 0.199996L4.4066 0.199996C3.96477 0.199996 3.6066 0.558168 3.6066 0.999996C3.6066 1.44182 3.96477 1.8 4.4066 1.8L10.8066 1.8L10.8066 8.2C10.8066 8.64182 11.1648 9 11.6066 9C12.0484 9 12.4066 8.64182 12.4066 8.2L12.4066 0.999996ZM1.56569 12.1723L12.1723 1.56568L11.0409 0.43431L0.434315 11.0409L1.56569 12.1723Z" fill="white" />
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <div class="btn--0302I">
+          <a href="" class="btn__link">
+            <span class="btn__link-text">
+              View more
+              <div class="btn__link-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="6" viewBox="0 0 24 6" fill="none">
+                  <g clip-path="url(#clip0_83_278)">
+                    <path d="M0 5.65909H22.8663L15.2442 0.25909" stroke="black" stroke-width="0.5" stroke-miterlimit="10" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_83_278">
+                      <rect width="24" height="6" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="btn__link-circle"></div>
+            </span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

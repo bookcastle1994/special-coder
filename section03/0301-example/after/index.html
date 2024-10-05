@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>After</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- 共通のCSS読み込み -->
+    <link rel="stylesheet" href="/common/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/common/css/reset.css" />
+    <link rel="stylesheet" href="/common/css/base.css" />
+
+    <!-- 独自のCSS読み込み -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- GSAP CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <div class="hover-explain">
+        <p>テストテキスト</p>
+      </div>
+
+      <div class="hover-underline">
+        <p class="text1"><span>線が出現</span></p>
+        <p class="text2"><span>左から右に</span></p>
+        <p class="text3"><span>中央から両サイドに</span></p>
+        <p class="text4"><span>左から右に→右から左に消える</span></p>
+      </div>
+
+      <button class="hover-speed1">
+        <span class="text">transitionで速度を変える</span>
+      </button>
+
+      <div class="hover-speed2">
+        <p class="title">Contact Us</p>
+        <p class="text">当店に関するお問い合わせはこちら</p>
+        <div class="arrow-wrap">
+          <p class="arrow">Contact&emsp;&rarr;</p>
+          <p class="arrow">Contact&emsp;&rarr;</p>
+          <p class="arrow">Contact&emsp;&rarr;</p>
+          <p class="arrow">Contact&emsp;&rarr;</p>
+          <p class="arrow">Contact&emsp;&rarr;</p>
+          <p class="arrow">Contact&emsp;&rarr;</p>
+        </div>
+      </div>
+
+      <button class="hover-gradation">
+        <span class="text">View more</span>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 10 10" fill="none">
+          <circle cx="5" cy="5" r="5" fill="black" />
+          <path d="M8.21213 5.21213C8.32929 5.09497 8.32929 4.90503 8.21213 4.78787L6.30294 2.87868C6.18579 2.76152 5.99584 2.76152 5.87868 2.87868C5.76152 2.99584 5.76152 3.18579 5.87868 3.30294L7.57574 5L5.87868 6.69706C5.76152 6.81421 5.76152 7.00416 5.87868 7.12132C5.99584 7.23848 6.18579 7.23848 6.30294 7.12132L8.21213 5.21213ZM2 5.3H8V4.7H2V5.3Z" fill="white" />
+        </svg>
+      </button>
+    </main>
+
+    <footer></footer>
+
+    <!-- 共通のJS読み込み -->
+    <script src="/common/js/lib/swiper-bundle.min.js"></script>
+    <script src="/common/js/main.js"></script>
+
+    <!-- 独自のJS読み込み -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
